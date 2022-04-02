@@ -18,6 +18,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("render.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+        HelloController ctrl = fxmlLoader.getController();
 
         stage.setTitle("Note App");
         stage.setScene(scene);
@@ -27,18 +28,8 @@ public class HelloApplication extends Application {
 
         stage.setOnCloseRequest((event) -> {
             event.consume();
-            logout(stage);
+            ctrl.logout();
         });
-    }
-    public void logout(Stage stage) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Logout");
-        alert.setHeaderText("You are about logout");
-        alert.setContentText("Do you want to logout ?");
-
-        if (alert.showAndWait().get() == ButtonType.OK) {
-            stage.close();
-        }
     }
 
     public static void main(String[] args) {
