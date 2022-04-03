@@ -162,7 +162,7 @@ public class HelloController implements Initializable {
         /* Open page in web browser
         *
         * */
-        
+
         String os = System.getProperty("os.name").toLowerCase();
         Runtime rt = Runtime.getRuntime();
         String[] browsers = {"firefox", "mozilla", "google-chrome", "epiphany",

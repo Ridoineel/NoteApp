@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -22,6 +23,7 @@ public class HelloApplication extends Application {
 
         stage.setTitle("Note App");
         stage.setScene(scene);
+        stage.getIcons().add(new Image(getClass().getResource("assets/icons/noteapp.png").toExternalForm()));
         stage.setMinWidth(300);
         stage.setMinHeight(300);
         stage.show();
