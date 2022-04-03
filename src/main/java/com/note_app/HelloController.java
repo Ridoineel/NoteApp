@@ -12,8 +12,12 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Locale;
 import java.util.ResourceBundle;
+import java.awt.Desktop;
 
 public class HelloController implements Initializable {
     @FXML
@@ -145,8 +149,45 @@ public class HelloController implements Initializable {
         textArea.clear();
     }
 
-    public void about(ActionEvent event) {
+    public void about(ActionEvent event) throws URISyntaxException, IOException {
+        /* For about, just open my github page (ridoineel)
+        *
+        */
 
+        String url = "https://github.com/ridoineel";
+        openLink(url);
+    }
+
+    public void openLink(String url) throws IOException {
+        /* Open page in web browser
+        *
+        * */
+        
+        String os = System.getProperty("os.name").toLowerCase();
+        Runtime rt = Runtime.getRuntime();
+        String[] browsers = {"firefox", "mozilla", "google-chrome", "epiphany",
+                "konqueror", "netscape", "opera", "lynx"};
+
+        if (os.indexOf("win") >= 0) {
+            // Windows
+            rt.exec("rundll32 url.dll,FileProtocolHandler " + url);
+        }else if (os.indexOf("mac") >= 0) {
+            // Mac
+            rt.exec("open " + url);
+        }else if (os.indexOf("nix") >= 0 || os.indexOf("nux") >= 0) {
+            // Linux
+            StringBuffer cmd = new StringBuffer();
+            String one_command = new String();
+
+            for (int i = 0; i < browsers.length; i++) {
+                one_command = (i != 0) ? " || ": "";
+                one_command += "%s \"%s\"";
+
+                cmd.append(String.format(one_command, browsers[i], url));
+            }
+
+            rt.exec(new String[] {"sh", "-c", cmd.toString()});
+        }
     }
 
     public void updateSaveStatus(KeyEvent event) {
