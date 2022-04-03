@@ -2,7 +2,7 @@
 > Library: `JavaFX`
 
 > #### After open project, maven install dependencies automatically.
-> #### Lookup environment variable `production` in Env.java .
+
 ![fff](src/main/resources/com/note_app/assets/noteapp-cap.png)
 **<center>Note App UI</center>**
 
