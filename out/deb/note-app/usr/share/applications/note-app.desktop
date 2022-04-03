@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Note App
+GenericName=noteapp
+Version=1.2.0
+Encoding=UTF-8
+Exec=note-app
+Icon=/usr/share/icons/noteapp.png
+Type=Application
+Actions=new-window;
+Keywords=Editor;Note;
+Terminal=false
+
+[Desktop Action new-window]
+Name=New Window
+Exec=note-app
+Icon=/usr/share/icons/noteapp.png

@@ -1,0 +1,8 @@
+PACKAGE: note-app
+Version: 1.2.0
+Architecture: all
+Essential: no
+Priority: optional
+Depends: 
+Maintainer: RidoineEl
+Description: Note application

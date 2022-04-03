@@ -1,1 +1,3 @@
-out
+out/artifacts
+out/deb/note-app.deb
+out/deb/note-app/opt/note-app/*

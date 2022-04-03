@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# default java home
+JAVA_HOME=/usr/bin/java
+
+# java home in /etc/environment if exist
+source /etc/environment
+
+
+$JAVA_HOME --module-path /opt/note-app/lib/openjfx-sdk/lib --add-modules javafx.controls,javafx.fxml,javafx.graphics -jar /opt/note-app/note-app.jar
