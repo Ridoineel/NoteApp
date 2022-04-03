@@ -12,13 +12,13 @@ got to release section and download **note-app-`version`.deb**,
 ### requirement: java 
 
 Set `JAVA_HOME=/your_java_path` in `/etc/environment` <br />
-or install jdk with.
+or install jre with.
 
 ```bash
-sudo apt install open-jdk-17
+sudo apt install openjdk-17-jre
 ```
 
-> Note: if java command exist, and you don't know java path,
+> Note: if java is installed, and you don't know java path,
 > use <br /> ``` which java```
 
 
